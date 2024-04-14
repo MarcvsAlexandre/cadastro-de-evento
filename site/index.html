@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Evento</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <form id="reservationForm">
+        <h2>Cadastro de Evento</h2>
+        <div>
+            <label for="eventName">Nome do Evento:</label>
+            <input type="text" id="eventName" required setRandomEventPlaceholder maxlength="50" oninvalid="this.setCustomValidity('Por favor, insira o nome do evento.')" oninput="this.setCustomValidity('')">
+        </div>
+        <div>
+            <label for="eventDate">Data do Evento:</label>
+            <input type="date" id="eventDate" required oninvalid="this.setCustomValidity('Por favor, selecione a data do evento.')" oninput="this.setCustomValidity('')">
+        </div>
+        <div>
+            <label for="cep">CEP:</label>
+            <input type="text" id="cep" required placeholder="01235678" maxlength="8" oninvalid="this.setCustomValidity('Por favor, insira um CEP válido.')" oninput="this.setCustomValidity('')" onkeyup="this.value=this.value.replace(/\D/g,'')">
+        </div>
+        <div>
+            <button type="button" onclick="buscarCep()">Buscar CEP</button>
+        </div>
+        <div>
+            <label for="eventAddress">Endereço:</label>
+            <input type="text" id="eventAddress" required placeholder="Av São João, Nª 123" maxlength="50" oninvalid="this.setCustomValidity('Por favor, insira o endereço do evento.')" oninput="this.setCustomValidity('')">
+        </div>
+        <div>
+            <label for="unitAndBuilding">Complemento:</label>
+            <input type="text" id="unitAndBuilding" required placeholder="Apto 195 Bloco 2" maxlength="30" oninvalid="this.setCustomValidity('Por favor, insira o complemento do endereço.')" oninput="this.setCustomValidity('')">
+        </div>
+        <div>
+            <label for="bairro">Bairro:</label>
+            <input type="text" id="bairro" required placeholder="Morumbi" maxlength="30" oninvalid="this.setCustomValidity('Por favor, insira o bairro.')" oninput="this.setCustomValidity('')">
+        </div>
+        <div>
+            <label for="cidade">Cidade:</label>
+            <input type="text" id="cidade" required placeholder="São Paulo" maxlength="30" oninvalid="this.setCustomValidity('Por favor, insira a cidade.')" oninput="this.setCustomValidity('')">
+        </div>
+        <div>
+            <label for="estado">Estado:</label>
+            <input type="text" id="estado" required placeholder="São Paulo" maxlength="20" oninvalid="this.setCustomValidity('Por favor, insira o estado.')" oninput="this.setCustomValidity('')">
+        </div>
+        <div>
+            <label for="participants">Quantidade de Participantes:</label>
+            <select id="participants" required oninvalid="this.setCustomValidity('Por favor, selecione a quantidade de participantes.')" onchange="this.setCustomValidity('')">
+                <option value="">Selecione a quantidade</option>
+            </select>
+        </div>
+        <div>
+            <button type="submit">Cadastrar</button>
+        </div>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
