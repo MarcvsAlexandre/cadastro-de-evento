@@ -53,6 +53,11 @@
             </select>
         </div>
         <div>
+            <form action="/caminho-para-processar-formulario" method="post" enctype="multipart/form-data">
+                <label for="fileUpload">Escolha um arquivo para anexar:</label>
+                <input type="file" id="fileUpload" name="fileUpload" required>
+        </div>
+        <div>
             <button type="submit" id="buttonRegistration">Cadastrar</button>
         </div>
     </form>
