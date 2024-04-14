@@ -22,7 +22,9 @@
             <input type="text" id="cep" required placeholder="01235678" maxlength="8" oninvalid="this.setCustomValidity('Por favor, insira um CEP válido.')" oninput="this.setCustomValidity('')" onkeyup="this.value=this.value.replace(/\D/g,'')">
         </div>
         <div>
-            <button type="button" onclick="buscarCep()">Buscar CEP</button>
+            <button type="button" id="buttonCep" onclick="buscarCep()">Buscar CEP</button>
+            
+
         </div>
         <div>
             <label for="eventAddress">Endereço:</label>
@@ -51,7 +53,7 @@
             </select>
         </div>
         <div>
-            <button type="submit">Cadastrar</button>
+            <button type="submit" id="buttonRegistration">Cadastrar</button>
         </div>
     </form>
 

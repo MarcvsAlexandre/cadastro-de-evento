@@ -48,6 +48,7 @@ async function handleFormSubmit(event) {
 }
 
 async function buscarCep() {
+    
     const cep = document.getElementById('cep').value;
     if (cep.length !== 8) {
         return alert("CEP deve ter 8 dígitos.");
@@ -56,7 +57,6 @@ async function buscarCep() {
     try {
         const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
         if (!response.ok) throw new Error('Resposta da rede não foi ok.');
-
         const data = await response.json();
         if (data.erro) throw new Error('CEP não encontrado.');
 
@@ -72,7 +72,7 @@ function preencherCampos(data) {
     document.getElementById('cidade').value = data.localidade || '';
     document.getElementById('estado').value = data.uf || '';
 
-    clearCustomValidity(['eventAddress', 'bairro', 'cidade', 'estado']);
+   // clearCustomValidity(['eventAddress', 'bairro', 'cidade', 'estado']);
 }
 
 function clearCustomValidity(fieldIds) {
@@ -81,7 +81,7 @@ function clearCustomValidity(fieldIds) {
         if (field) field.setCustomValidity('');
     });
 
-    // Call reportValidity to update the form's visual state
+
     document.getElementById('reservationForm').reportValidity();
 }
 
@@ -97,3 +97,4 @@ function setRandomEventPlaceholder() {
     const eventNameInput = document.getElementById('eventName');
     eventNameInput.placeholder = eventPlaceholders[randomIndex];
 }
+
